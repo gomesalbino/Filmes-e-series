@@ -1,5 +1,5 @@
 <x-layout title="Nova Séria">
-    <form action="{{ route('series.index') }}" method="get">
+    <form action="{{ route('series.salvar') }}" method="post">
      @csrf
         <div class="row mb-3">
         <label for="nome" class="col-sm-2 col-form-label">Nome:</label>

@@ -24,6 +24,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/series', [SeriesController::class, 'index'])->name('series.index');
-
-Route::get('/series/create', [SeriesController::class, 'store'])->name('series.create');
+Route::get('/series/create', [SeriesController::class, 'create'])->name('series.create');
+Route::post('series/salvar', [SeriesController::class, 'store'])->name('series.salvar');
 require __DIR__.'/auth.php';
