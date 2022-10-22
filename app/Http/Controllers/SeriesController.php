@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Series;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class SeriesController extends Controller
 {
     public function index(Request $request)
     {
-        $series = DB::select('SELECT nome FROM series;');
-
+        $series = Series::query()->orderBy('nome')->get();
+    
         return view('series.index')->with('series', $series);
     }
 
@@ -22,6 +23,10 @@ class SeriesController extends Controller
     {
         $nomeSerie = $request->input('nome');
         
+        $serie = new Series();
+        $serie->nome = $nomeSerie;
+        $serie->save();
+
         DB::insert('INSERT INTO series (nome) VALUES (?)', [$nomeSerie]);
             
         return to_route('series.index');
