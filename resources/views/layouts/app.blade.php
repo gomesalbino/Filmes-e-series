@@ -12,8 +12,6 @@
         
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <script src="{{ asset('dist/js/app.js') }}"></script>
-        <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}">
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
