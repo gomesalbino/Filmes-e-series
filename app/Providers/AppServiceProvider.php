@@ -28,10 +28,10 @@ class AppServiceProvider extends ServiceProvider
                 '/public/build/manifest.json', 
                 '/resources/views/layouts/guest.blade.php'
             ];
-        $manifestResult = implode("", $manifest);
+        $manifestResult = implode("manifest", $manifest);
         
         $manifestString = base_path().$manifestResult;
-        
+
         return $manifestString;
         });
     }
