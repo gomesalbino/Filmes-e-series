@@ -8,13 +8,8 @@ class SeriesController extends Controller
 {
     public function index(Request $request)
     {
-        $series = [
-            'um' => 'UM',
-            'dois' => 'DOIS',
-            'tres' => 'TRES',
-            'quatro' => 'QUATRO',
+        $series = DB::select('SELECT nome FROM series;');
 
-        ];
         return view('series.index')->with('series', $series);
     }
 
@@ -27,12 +22,8 @@ class SeriesController extends Controller
     {
         $nomeSerie = $request->input('nome');
         
-        if(DB::insert('INSERT INTO series (nome) VALUES (?)', [$nomeSerie])){
-            return "ok";
-        }else{
-            return "Deu erro";
-        };
-
+        DB::insert('INSERT INTO series (nome) VALUES (?)', [$nomeSerie]);
+            
         return to_route('series.index');
     }
 }

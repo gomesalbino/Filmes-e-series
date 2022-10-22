@@ -3,7 +3,7 @@
         <div class="mb-3 mt-3 list-group">
             <ul>
             @foreach ($series as $serie )
-                <li class="list-group-item">{{ $serie }} </li>
+                <li class="list-group-item">{{ $serie->nome }} </li>
             @endforeach
             </ul>
         </div>
