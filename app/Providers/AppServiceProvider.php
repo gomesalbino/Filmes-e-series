@@ -24,10 +24,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->bind('path.public', function() {
-            return base_path().[
+        $manifest = [
                 '/public/build/manifest.json', 
                 '/resources/views/layouts/guest.blade.php'
             ];
+        $manifestResult = implode("", $manifest);
+        
+        $manifestString = base_path().$manifestResult;
+        
+        return $manifestString;
         });
     }
 }
