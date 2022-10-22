@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SeriesController;
+use App\Models\Series;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +23,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/series', [SeriesController::class, 'index'])->name('series.index');
+
+Route::get('/series/create', [SeriesController::class, 'store'])->name('series.create');
 require __DIR__.'/auth.php';
