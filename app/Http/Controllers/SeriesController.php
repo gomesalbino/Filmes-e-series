@@ -21,13 +21,8 @@ class SeriesController extends Controller
 
     public function store(Request $request)
     {
-        $nomeSerie = $request->input('nome');
-        
-        $serie = new Series();
-        $serie->nome = $nomeSerie;
-        $serie->save();
-
-        DB::insert('INSERT INTO series (nome) VALUES (?)', [$nomeSerie]);
+   
+        Series::create($request->all());
             
         return to_route('series.index');
     }
