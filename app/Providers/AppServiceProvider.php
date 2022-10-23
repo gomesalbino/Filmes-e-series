@@ -28,8 +28,8 @@ class AppServiceProvider extends ServiceProvider
         URL::forceScheme('https');
 
     }
-        $this->app->bind('path.public', function () {
-            return base_path().__DIR__;
-        });
+        // $this->app->bind('path.public', function () {
+        //     return base_path().__DIR__;
+        // });
     }
 }
