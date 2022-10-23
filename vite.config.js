@@ -2,6 +2,12 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import manifestSRI from 'vite-plugin-manifest-sri';
 
+import.meta.glob([
+    '../images/**',
+    '../fonts/**',
+    
+  ]);
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -10,7 +16,7 @@ export default defineConfig({
                 'resources/js/app.js',
 
             ],
-            refresh: true,
+            refresh: ['public/build/manifest.json'],
         }),
         manifestSRI(),
     ],
