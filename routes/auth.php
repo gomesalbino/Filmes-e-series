@@ -58,8 +58,8 @@ Route::middleware('auth')->group(function () {
                 ->name('logout');
 
     
-    Route::resource('/series', SeriesController::class)->only(['index', 'create', 'store']);
+    Route::resource('/series', SeriesController::class)->only(['index', 'create', 'store', 'destroy']);
     
     
-    Route::delete('/series/destroy/{serie}', [SeriesController::class, 'destroy'])->name('series.destroy');     
+    
 });

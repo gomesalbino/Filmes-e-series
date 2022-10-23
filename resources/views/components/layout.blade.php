@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,20 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-<body>
-  <div class="container mt-4">
-    <h1>{{ $title }}</h1>
 
-    {{ $slot }}
-    
-  </div>
+<body>
+    <div class="container mt-4">
+        <h1>{{ $title }}</h1>
+
+        {{ $slot }}
+
+        @isset($mensagemSucesso)
+            <div class="alert alert-success">
+                {{ $mensagemSucesso }}
+            </div>
+        @endisset
+
+    </div>
 </body>
+
 </html>
