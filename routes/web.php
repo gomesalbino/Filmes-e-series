@@ -15,14 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return to_route('series');
-})->middleware('auth', 'verified')->name('series');
 
+Route::get('/', function () {
+    return to_route('login');
+})->middleware('auth', 'verified')->name('login');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/series', function () {
+    return view('series');
+})->middleware(['auth', 'verified'])->name('series');
+
 
 require __DIR__.'/auth.php';
 

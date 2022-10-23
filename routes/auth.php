@@ -8,10 +8,14 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\BuscaSeriesController;
+use App\Http\Controllers\EpisodesController;
+use App\Http\Controllers\SeasonController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SeriesController;
-
+use App\Models\Series;
+use Illuminate\Http\Request;
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
@@ -56,10 +60,9 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
+    
 
-    
-    Route::resource('/series', SeriesController::class)->only(['index', 'create', 'store', 'destroy']);
-    
-    
-    
+    Route::resource('/series', SeriesController::class)
+    ->except(['show']);
+
 });
