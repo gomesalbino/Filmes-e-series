@@ -11,13 +11,18 @@
                 <li class="list-group-item d-flex justify-content-between algin-items-center">
                     {{ $serie->nome }}
 
-                    <form action="{{ route('series.destroy', $serie->id) }}" method="POST">
+                    <span class="d-flex">
+                    <a class="btn btn-success btn-sm" href="{{ route('series.edit', $serie->id) }}">
+                    <i class="fa-solid fa-marker"></i>
+                    </a>
+                        <form action="{{ route('series.destroy', $serie->id) }}" method="POST" class="ms-2">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger btn-sm">
                             <i class="fa-solid fa-trash-can"></i>
                         </button>
                     </form>
+                    </span>
 
                 </li>
             @endforeach
