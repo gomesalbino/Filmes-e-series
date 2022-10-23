@@ -11,12 +11,9 @@ import.meta.glob([
 export default defineConfig({
     plugins: [
         laravel({
-            input: [
-                'resources/css/app.css',
-                'resources/js/app.js',
-
-            ],
-            refresh: ['public/build/manifest.json'],
+            hotFile: 'storage/vite.hot', // Customize the "hot" file...
+            buildDirectory: 'bundle', // Customize the build directory...
+            input: ['resources/js/app.js'], // Specify the entry points..
         }),
         manifestSRI(),
     ],

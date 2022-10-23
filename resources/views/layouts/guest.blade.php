@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Scripts -->
-    @vite('resources/js/app.js')
-    @vite('resources/js/app.js', 'vendor/courier/build')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+     {{
+        Vite::useHotFile(storage_path('vite.hot')) // Customize the "hot" file...
+            ->useBuildDirectory('bundle') // Customize the build directory...
+            ->withEntryPoints(['resources/js/app.js']) // Specify the entry points...
+    }}
 </head>
 
 <body>
