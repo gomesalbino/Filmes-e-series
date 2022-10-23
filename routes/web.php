@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SeriesController;
 use App\Models\Series;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +25,8 @@ Route::get('/dashboard', function () {
 
 Route::get('/series', [SeriesController::class, 'index'])->name('series.index');
 Route::get('/series/create', [SeriesController::class, 'create'])->name('series.create');
-Route::post('series/salvar', [SeriesController::class, 'store'])->name('series.salvar');
+Route::post('/series/salvar', [SeriesController::class, 'store'])->name('series.salvar');
+
+
 require __DIR__.'/auth.php';
+
