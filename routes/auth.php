@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SeriesController;
 
+
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
@@ -57,6 +58,8 @@ Route::middleware('auth')->group(function () {
                 ->name('logout');
 
     
-    Route::resource('/series', SeriesController::class)->except(['show']);
-            
+    Route::resource('/series', SeriesController::class)->only(['index', 'create', 'store']);
+    
+    
+    Route::delete('/series/destroy/{serie}', [SeriesController::class, 'destroy'])->name('series.destroy');     
 });

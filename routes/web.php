@@ -16,18 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return to_route('login');
-})->middleware('auth', 'verified')->name('login');
+    return to_route('series');
+})->middleware('auth', 'verified')->name('series');
 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/series', [SeriesController::class, 'index'])->name('series.index');
-Route::get('/series/create', [SeriesController::class, 'create'])->name('series.create');
-Route::post('/series/salvar', [SeriesController::class, 'store'])->name('series.store');
-
 
 require __DIR__.'/auth.php';
 

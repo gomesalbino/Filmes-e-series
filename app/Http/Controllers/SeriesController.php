@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Series;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 class SeriesController extends Controller
 {
     public function index(Request $request)
@@ -25,5 +24,12 @@ class SeriesController extends Controller
         Series::create($request->all());
             
         return to_route('series.index');
+    }
+    
+    public function destroy(Request $request)
+    {
+        Series::destroy($request->serie);
+
+       return to_route('series.index');
     }
 }
