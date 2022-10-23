@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
 
     }
         $this->app->bind('path.public', function () {
-            return base_path().'../build/manifest.json';
+            return base_path().'/build/manifest.json';
         });
     }
 }
