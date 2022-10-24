@@ -19,9 +19,15 @@
         </div>
     </div>
 
+   <div class="mt-3 mb-3">
     <button type="submit" class="btn btn-primary btn-lg">
         <i class="fa-regular fa-floppy-disk"></i>
     </button>
+     <a class="btn btn-danger btn-lg ms-3" href="{{ route('series.index') }}">
+         <i class="fa-regular fa-rectangle-xmark"></i>
+      <a/>
+   </div>
+ 
 </form>
 
 </x-layout>

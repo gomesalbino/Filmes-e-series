@@ -41,14 +41,14 @@ class SeriesController extends Controller
             Season::insert($seasons);
 
             $episodes = [];
-            foreach($serie->seasons as $seasons)
+        foreach($serie->seasons as $seasons)
             {
-                for( $j = 1; $j <= $request->episodesPerSeason; $j++)
-                {
-                    $episodes[] = [
-                        'season_id' => $seasons->id,
-                        'number' => $j,
-                    ];
+            for( $j = 1; $j <= $request->episodesPerSeason; $j++)
+            {
+                $episodes[] = [
+                    'season_id' => $seasons->id,
+                    'number' => $j,
+                ];
                 }
             }
             Episode::insert($episodes);
