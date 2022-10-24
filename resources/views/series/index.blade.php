@@ -1,5 +1,7 @@
 <x-layout title="Minhas Series">
-    <a class="btn btn-dark" href="{{ route('series.create') }}">Adicionar</a>
+    <a class="btn btn-primary " href="{{ route('series.create') }}">
+       <i class="fa-sharp fa-solid fa-folder-plus"></i>
+    </a>
 
     @isset($mensagemSucesso)
         <div class="alert alert-success mt-3 mt-3">
@@ -9,8 +11,9 @@
         <ul class="list-group mb-3 mt-3">
             @foreach ($series as $serie)
                 <li class="list-group-item d-flex justify-content-between algin-items-center">
-                    {{ $serie->nome }}
-
+                    <a href="{{ route('seasons.index', $serie->id) }}">
+                       {{ $serie->nome }}
+                    </a>
                     <span class="d-flex">
                     <a class="btn btn-success btn-sm" href="{{ route('series.edit', $serie->id) }}">
                     <i class="fa-solid fa-marker"></i>

@@ -12,7 +12,7 @@
 
 <body>
     <div class="container mt-4">
-        <h1>{{ $title }}</h1>
+        <h1 class="text-secondary">{{ $title }}</h1>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
