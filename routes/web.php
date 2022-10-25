@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\SeriesController;
-use App\Models\Series;
 use Illuminate\Support\Facades\Route;
 
 /*
