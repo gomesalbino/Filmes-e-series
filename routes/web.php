@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return to_route('login');
-})->middleware(['auth', 'verified'])->name('login');
+})->middleware(Authenticate::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
