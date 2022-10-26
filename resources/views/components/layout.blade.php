@@ -11,9 +11,32 @@
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg bg-light">
+        <div class="container mt-3">
+            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+            <x-nav-link :href="route('dashboard')" class=" mt-2 mb-4">
+                    <img src="{{ asset('img/A.jpg ') }}" width="100px" alt="">
+                </x-nav-link>
+                <x-nav-link :href="route('dashboard')" class="btn btn-outline-warning mt-4 mb-4 ms-4">
+                    {{ __('Painel') }}
+                </x-nav-link>
+                <x-nav-link :href="route('series.index')" class="btn btn-outline-success mt-4 mb-4 ms-4">
+                    {{ __('Minhas Séries') }}
+                </x-nav-link>
+            </div>
+            <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <form action="{{ route('series.index') }}" method="GET" class="d-flex" role="search">
+                    <input class="form-control me-2 w-35" type="search" name="search" id="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </nav>
     <div class="container mt-4">
-        <h1 class="text-secondary">{{ $title }}</h1>
-         @isset($mensagemSucesso)
+
+        <h1 class="text-secondary mt-5">{{ $title }}</h1>
+        @isset($mensagemSucesso)
             <div class="alert alert-success">
                 {{ $mensagemSucesso }}
             </div>

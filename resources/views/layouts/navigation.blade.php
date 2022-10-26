@@ -15,7 +15,15 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    
                 </div>
+                
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('series.index')">
+                        {{ __('Séries') }}
+                    </x-nav-link>
+                </div>
+                
             </div>
 
             <!-- Settings Dropdown -->
@@ -43,6 +51,9 @@
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
+                            <x-dropdown-link :href="route('series.index')">
+                                {{ __('Séries') }}
+                            </x-dropdown-link>
                         </form>
                     </x-slot>
                 </x-dropdown>
@@ -66,6 +77,9 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('series.index')" :active="request()->routeIs('series.index')">
+                {{ __('Series') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -83,8 +97,9 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
+                        {{ __('Log Sair') }}
+                    
+                    </x-responsive-nav-link>    
                 </form>
             </div>
         </div>
