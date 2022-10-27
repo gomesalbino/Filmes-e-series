@@ -1,4 +1,4 @@
-<x-layout title="Minhas Series">
+<x-layout title="Minhas Séries">
     <a class="btn btn-primary " href="{{ route('series.create') }}">
        <i class="fa-sharp fa-solid fa-folder-plus"></i>
     </a>
@@ -32,5 +32,7 @@
                 </li>
             @endforeach
         </ul>
-
+    <div class="mt-4">
+        {{ $series->onEachSide(4)->links('pagination::bootstrap-4') }}
+    </div>
 </x-layout>

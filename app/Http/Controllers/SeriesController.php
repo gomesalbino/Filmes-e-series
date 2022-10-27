@@ -15,7 +15,15 @@ class SeriesController extends Controller
     }
     public function index(Request $request)
     {
-        $series = Series::query()->orderBy('nome')->get();
+        $search = request('search');
+
+        if($search){
+            $series = Series::where([
+                ['nome', 'like', '%'.$search.'%']
+            ])->paginate(4);
+        }else{
+         $series = Series::paginate(4);
+        }
 
         $mensagemSucesso = session('mensagem.sucesso');
 

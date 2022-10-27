@@ -17,8 +17,8 @@
             <x-nav-link :href="route('dashboard')" class=" mt-2 mb-4">
                     <img src="{{ asset('img/A.jpg ') }}" width="100px" alt="">
                 </x-nav-link>
-                <x-nav-link :href="route('dashboard')" class="btn btn-outline-warning mt-4 mb-4 ms-4">
-                    {{ __('Painel') }}
+                <x-nav-link :href="route('dashboard')" class="btn btn-info btn-lg mt-4 mb-4 ms-4 w-20">
+                   <i class="fa-solid fa-house-user"></i>
                 </x-nav-link>
                 <x-nav-link :href="route('series.index')" class="btn btn-outline-success mt-4 mb-4 ms-4">
                     {{ __('Minhas Séries') }}
