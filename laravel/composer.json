@@ -6,19 +6,15 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "barryvdh/laravel-dompdf": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
-        "laravel/tinker": "^2.7",
-        "tightenco/ziggy": "^1.5"
+        "laravel/tinker": "^2.7"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.7",
         "fakerphp/faker": "^1.9.1",
-        "laravel/breeze": "^1.14",
         "laravel/pint": "^1.0",
-        "laravel/sail": "^1.16",
+        "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
@@ -50,8 +46,6 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-        
-        
     },
     "extra": {
         "laravel": {

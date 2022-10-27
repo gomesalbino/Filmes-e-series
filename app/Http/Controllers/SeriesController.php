@@ -6,7 +6,7 @@ use App\Http\Requests\SeriesFormRequest;
 use App\Models\Series;
 use App\Repositories\SeriesRepository;
 use Illuminate\Http\Request;
-
+use PDF;
 class SeriesController extends Controller
 {
     public function __construct(private SeriesRepository $repository)
@@ -57,5 +57,16 @@ class SeriesController extends Controller
 
         return to_route('series.index')
         ->with('mensagem.sucesso', "Série '{$series->nome}' atualizada com sucesso.");
+    }
+
+    public function imprimir()
+    {
+       $series = Series::get();
+        $pdf = PDF::loadView('pdf.imprimir', [
+            'series' => $series,
+        ]);
+        // return $pdf->stream();
+        return $pdf->download('imprimir.pdf');
+
     }
 }

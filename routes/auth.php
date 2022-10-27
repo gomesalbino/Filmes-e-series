@@ -67,4 +67,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/seasons/{season}/episodes', [EpisodesController::class, 'index'])->name('episodes.index');
     
     Route::post('/seasons/{season}/episodes', [EpisodesController::class, 'update'])->name('episodes.update');
+
+    Route::get('/series/imprimir', [SeriesController::class, 'imprimir'])->name('imprimir');
 });
