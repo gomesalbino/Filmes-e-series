@@ -5,6 +5,9 @@
      <a href="{{ route('imprimir') }}" class="btn btn-secondary mt-3 mb-3 ms-2">
      <i class="fa-solid fa-print"></i>
      </a>
+     <a href="{{ route('dashboard') }}" class="btn btn-info mt-3 mb-3 ms-2">
+        <i class="fa-solid fa-house"></i>
+     </a>
     @isset($mensagemSucesso)
         <div class="alert alert-success mt-3 mt-3">
             {{ $mensagemSucesso }}

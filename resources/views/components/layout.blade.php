@@ -16,12 +16,12 @@
 
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container mt-3">
-            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+        <div class="mt-3 container-fluid">
+            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex container-fluid">
             <x-nav-link :href="route('dashboard')" class=" mt-2 mb-4">
                     <img src="{{ asset('img/A.jpg ') }}" width="100px" alt="">
                 </x-nav-link>
-                <x-nav-link :href="route('dashboard')" class="btn btn-info btn-lg mt-4 mb-4 ms-4 w-20">
+                <x-nav-link :href="route('dashboard')" class="btn btn-info mt-4 mb-4 ms-4 w-20">
                    <i class="fa-solid fa-house-user"></i>
                 </x-nav-link>
                 <x-nav-link :href="route('series.index')" class="btn btn-outline-success mt-4 mb-4 ms-4">
